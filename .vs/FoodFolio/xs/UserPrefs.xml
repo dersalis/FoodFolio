@@ -1,4 +1,38 @@
 ﻿<Properties StartupConfiguration="{D3D75334-1420-4840-88D9-90A8827B6D57}|https">
   <MonoDevelop.Ide.ItemProperties.FoodFolio.WebApi PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/Entities/Seed/Seeder.cs" relfile="FoodFolio.WebApi/Entities/Seed/Seeder.cs" line="23" column="1" />
+      <Breakpoint file="/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/Entities/Seed/Seeder.cs" relfile="FoodFolio.WebApi/Entities/Seed/Seeder.cs" line="17" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="FoodFolio.WebApi/Entities/DbContext/FoodFolioDbContext.cs">
+    <Files>
+      <File FileName="FoodFolio.WebApi/Entities/DbContext/FoodFolioDbContext.cs" Line="6" Column="44" />
+      <File FileName="FoodFolio.WebApi/Entities/Dish.cs" Line="9" Column="40" NotebookId="1" />
+      <File FileName="FoodFolio.WebApi/Entities/Base/EntityBase.cs" Line="8" Column="2" NotebookId="1" />
+      <File FileName="FoodFolio.WebApi/Entities/Base/MetricBase.cs" Line="4" Column="2" NotebookId="1" />
+      <File FileName="FoodFolio.WebApi/Entities/Dish/DishType.cs" Line="6" Column="41" NotebookId="1" />
+      <File FileName="FoodFolio.WebApi/Entities/User/User.cs" Line="10" Column="35" NotebookId="1" />
+      <File FileName="FoodFolio.WebApi/Entities/Role/Role.cs" Line="6" Column="44" NotebookId="1" />
+      <File FileName="FoodFolio.WebApi/FoodFolio.WebApi.csproj" Line="41" Column="35" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FoodFolio">
+            <Node name="FoodFolio.WebApi" selected="True">
+              <Node name="Entities">
+                <Node name="Dish" expanded="True" />
+                <Node name="Seed" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
 </Properties>

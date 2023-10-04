@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/FoodFolio.WebApi.props" />
+</Project>
