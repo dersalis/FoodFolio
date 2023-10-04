@@ -37,6 +37,7 @@
     <None Remove="Entities\DbContext\" />
     <None Remove="Entities\Seed\" />
     <None Remove="Entities\Configurations\" />
+    <None Remove="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -47,5 +48,6 @@
     <Folder Include="Entities\DbContext\" />
     <Folder Include="Entities\Seed\" />
     <Folder Include="Entities\Configurations\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>
