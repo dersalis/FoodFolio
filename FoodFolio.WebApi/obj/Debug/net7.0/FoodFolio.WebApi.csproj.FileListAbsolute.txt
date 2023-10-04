@@ -1,0 +1,7 @@
+/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/obj/Debug/net7.0/FoodFolio.WebApi.csproj.AssemblyReference.cache
+/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/obj/Debug/net7.0/FoodFolio.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/obj/Debug/net7.0/FoodFolio.WebApi.AssemblyInfoInputs.cache
+/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/obj/Debug/net7.0/FoodFolio.WebApi.AssemblyInfo.cs
+/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/obj/Debug/net7.0/FoodFolio.WebApi.csproj.CoreCompileInputs.cache
+/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/obj/Debug/net7.0/FoodFolio.WebApi.MvcApplicationPartsAssemblyInfo.cs
+/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/obj/Debug/net7.0/FoodFolio.WebApi.MvcApplicationPartsAssemblyInfo.cache
