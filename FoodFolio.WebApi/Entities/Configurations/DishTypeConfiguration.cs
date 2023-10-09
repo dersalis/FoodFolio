@@ -21,6 +21,7 @@ public class DishTypeConfiguration : IEntityTypeConfiguration<DishType>
         builder.Property(p => p.IsActive)
             .IsRequired()
             .HasDefaultValue(false);
+
     }
 }
 

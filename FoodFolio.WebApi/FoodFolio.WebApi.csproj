@@ -38,6 +38,11 @@
     <None Remove="Entities\Seed\" />
     <None Remove="Entities\Configurations\" />
     <None Remove="Services\" />
+    <None Remove="Middleware\" />
+    <None Remove="Exceptions\" />
+    <None Remove="Dtos\" />
+    <None Remove="MappingProfiles\" />
+    <None Remove="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -49,5 +54,10 @@
     <Folder Include="Entities\Seed\" />
     <Folder Include="Entities\Configurations\" />
     <Folder Include="Services\" />
+    <Folder Include="Middleware\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Dtos\" />
+    <Folder Include="MappingProfiles\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 </Project>

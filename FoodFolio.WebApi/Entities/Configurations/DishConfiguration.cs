@@ -28,6 +28,9 @@ public class DishConfiguration : IEntityTypeConfiguration<Dish>
             .IsRequired()
             .HasDefaultValue(false);
 
+        builder.Property(p => p.ServingDate)
+            .IsRequired();
+
         builder.HasOne(p => p.DishType);
     }
 }
