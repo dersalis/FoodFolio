@@ -1,11 +1,12 @@
 using FoodFolio.WebApi.Entities;
 using FoodFolio.WebApi.Middleware;
+using FoodFolio.WebApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IDishService, DishService>();
 builder.Services.AddDbContext<FoodFolioDbContext>();
-
 builder.Services.AddScoped<ErrorHandlingMiddleware>();
 
 builder.Services.AddControllers();

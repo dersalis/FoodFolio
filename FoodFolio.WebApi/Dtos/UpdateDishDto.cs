@@ -7,8 +7,6 @@ public class UpdateDishDto
     public decimal Price { get; set; }
     public string? PhotoUrl { get; set; }
     public int DishTypeId { get; set; }
-    public int? CreatedById { get; set; }
-    public DateTime? CreatedDate { get; set; }
     public int? ModifiedById { get; set; }
     public DateTime? ModifiedDate { get; set; }
 }

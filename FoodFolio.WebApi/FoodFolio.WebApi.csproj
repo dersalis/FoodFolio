@@ -43,6 +43,7 @@
     <None Remove="Dtos\" />
     <None Remove="MappingProfiles\" />
     <None Remove="Extensions\" />
+    <None Remove="Enums\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -59,5 +60,6 @@
     <Folder Include="Dtos\" />
     <Folder Include="MappingProfiles\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Enums\" />
   </ItemGroup>
 </Project>

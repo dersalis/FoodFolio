@@ -8,7 +8,8 @@ public class DishMappingProfile : Profile
 {
 	public DishMappingProfile()
 	{
-		CreateMap<Dish, CreateDishDto>();
+		CreateMap<Dish, DishDto>();
+		CreateMap<CreateDishDto, Dish>();
 	}
 }
 
