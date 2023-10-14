@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/wwwroot/3badd4a6-8ade-4dc0-8675-83452ea3848e.jpg",
+      "PackagePath": "staticwebassets/3badd4a6-8ade-4dc0-8675-83452ea3848e.jpg"
+    },
+    {
+      "Id": "/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/wwwroot/c681f9f6-ea20-4d8d-9e31-e1d686d38216.jpg",
+      "PackagePath": "staticwebassets/c681f9f6-ea20-4d8d-9e31-e1d686d38216.jpg"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.FoodFolio.WebApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.FoodFolio.WebApi.props",
+      "PackagePath": "build\\FoodFolio.WebApi.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.FoodFolio.WebApi.props",
+      "PackagePath": "buildMultiTargeting\\FoodFolio.WebApi.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.FoodFolio.WebApi.props",
+      "PackagePath": "buildTransitive\\FoodFolio.WebApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

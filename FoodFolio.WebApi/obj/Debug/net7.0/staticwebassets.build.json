@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "uGKnFRs/Tyc2VpqC/Gx18UHDrfVEU7Gd5a/TnoWJAcA=",
+  "Hash": "clqdGI1qMW+ELxUsxq4saeS5bkHmYoN+vlbTic1/kdU=",
   "Source": "FoodFolio.WebApi",
   "BasePath": "_content/FoodFolio.WebApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "FoodFolio.WebApi/wwwroot",
+      "Source": "FoodFolio.WebApi",
+      "ContentRoot": "/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/wwwroot/",
+      "BasePath": "_content/FoodFolio.WebApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/wwwroot/3badd4a6-8ade-4dc0-8675-83452ea3848e.jpg",
+      "SourceId": "FoodFolio.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/wwwroot/",
+      "BasePath": "_content/FoodFolio.WebApi",
+      "RelativePath": "3badd4a6-8ade-4dc0-8675-83452ea3848e.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/3badd4a6-8ade-4dc0-8675-83452ea3848e.jpg"
+    },
+    {
+      "Identity": "/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/wwwroot/c681f9f6-ea20-4d8d-9e31-e1d686d38216.jpg",
+      "SourceId": "FoodFolio.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/wwwroot/",
+      "BasePath": "_content/FoodFolio.WebApi",
+      "RelativePath": "c681f9f6-ea20-4d8d-9e31-e1d686d38216.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/c681f9f6-ea20-4d8d-9e31-e1d686d38216.jpg"
+    }
+  ]
 }

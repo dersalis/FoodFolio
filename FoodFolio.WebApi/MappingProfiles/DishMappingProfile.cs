@@ -6,10 +6,10 @@ namespace FoodFolio.WebApi.MappingProfiles;
 
 public class DishMappingProfile : Profile
 {
-	public DishMappingProfile()
+    public DishMappingProfile()
 	{
-		CreateMap<Dish, DishDto>();
+
+        CreateMap<Dish, DishDto>();
 		CreateMap<CreateDishDto, Dish>();
 	}
 }
-

@@ -84,3 +84,4 @@
 /Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/obj/Debug/net7.0/FoodFolio.WebApi.pdb
 /Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/obj/Debug/net7.0/FoodFolio.WebApi.genruntimeconfig.cache
 /Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/obj/Debug/net7.0/ref/FoodFolio.WebApi.dll
+/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/bin/Debug/net7.0/FoodFolio.WebApi.staticwebassets.runtime.json

@@ -33,7 +33,7 @@ public class DishController : ControllerBase
     [HttpGet("byid/{id:int}")]
     public async Task<ActionResult<DishDto>> GetByIdAll(int id)
     {
-        DishDto result = await _dishService.GetByIdAsync(id);
+        DishDto result = await _dishService.GetByIdAsync(id, Request);
         return Ok(result);
     }
 
@@ -52,7 +52,7 @@ public class DishController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult> Create([FromBody] CreateDishDto dish)
+    public async Task<ActionResult> Create([FromForm] CreateDishDto dish)
     {
         int dishId = await _dishService.CreateAsync(dish);
         return Created($"api/dish/{dishId}", null);

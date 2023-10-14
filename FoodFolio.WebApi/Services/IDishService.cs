@@ -8,7 +8,8 @@ namespace FoodFolio.WebApi.Services
         Task DeleteAsync(int id);
         Task<IEnumerable<DishDto>> GetAllAsync();
         Task<PagedResultDto<DishDto>> GetAllAsync(QueryDto query);
-        Task<DishDto> GetByIdAsync(int id);
+        //Task<DishDto> GetByIdAsync(int id);
+        Task<DishDto> GetByIdAsync(int id, HttpRequest request);
         Task<IEnumerable<DishDto>> GetCurrentDayAsync();
         Task<IEnumerable<DishDto>> GetCurrentWeekAsync();
         Task UpdateAsync(int id, UpdateDishDto dish);

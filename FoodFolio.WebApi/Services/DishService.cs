@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using System;
+using System.Linq.Expressions;
 using AutoMapper;
 using FoodFolio.WebApi.Dtos;
 using FoodFolio.WebApi.Entities;
@@ -10,32 +11,37 @@ namespace FoodFolio.WebApi.Services;
 
 public class DishService : IDishService
 {
-    private readonly FoodFolioDbContext _context;
+    private readonly FoodFolioDbContext _dbContext;
     private readonly IMapper _mapper;
+    private readonly IWebHostEnvironment _hostEnvironment;
+
+    private const string DIRECTORY = "/wwwroot/";
 
     public DishService(
-        FoodFolioDbContext context,
-        IMapper mapper
+        FoodFolioDbContext dbContext,
+        IMapper mapper,
+        IWebHostEnvironment environment
         )
     {
-        _context = context;
+        _dbContext = dbContext;
         _mapper = mapper;
+        _hostEnvironment = environment;
     }
 
     public async Task<IEnumerable<DishDto>> GetAllAsync()
     {
-        IEnumerable<Dish> dishes = _context.Dishes;
+        IEnumerable<Dish> dishes = _dbContext.Dishes;
 
         return _mapper.Map<IEnumerable<DishDto>>(dishes);
     }
 
     public async Task<PagedResultDto<DishDto>> GetAllAsync(QueryDto query)
     {
-        var queryResult = _context.Dishes
+        var queryResult = _dbContext.Dishes
             .Where(d => query.SearchPhrase == null && (d.Name.ToLower().Contains(query.SearchPhrase.ToLower()) && d.Description.ToLower().Contains(query.SearchPhrase.ToLower())));
 
 
-        if(!string.IsNullOrEmpty(query.SortBy))
+        if (!string.IsNullOrEmpty(query.SortBy))
         {
             var columnSelectors = new Dictionary<string, Expression<Func<Dish, object>>>
             {
@@ -65,10 +71,13 @@ public class DishService : IDishService
         return result;
     }
 
-    public async Task<DishDto> GetByIdAsync(int id)
+    public async Task<DishDto> GetByIdAsync(int id, HttpRequest request)
     {
         Dish dish = await GetDishById(id);
-
+        //dish.PhotoUrl = Path.Combine(_hostEnvironment.WebRootPath, dish.PhotoUrl);
+        //dish.PhotoUrl = $"{context.Request.Scheme}";
+        //var host = $"{context.Request.Scheme}://{context.Request.Host}";
+        dish.PhotoUrl = $"{request.Scheme}://{request.Host.ToString()}{dish.PhotoUrl}";
         return _mapper.Map<DishDto>(dish);
     }
 
@@ -77,7 +86,7 @@ public class DishService : IDishService
         DateTime fromDate = DateTime.Now.Date;
         DateTime toDate = fromDate.AddDays(1);
 
-        IEnumerable<Dish> dishes = await _context.Dishes
+        IEnumerable<Dish> dishes = await _dbContext.Dishes
             .Where(d => d.ServingDate >= fromDate && d.ServingDate <= toDate)
             .ToListAsync();
 
@@ -89,7 +98,7 @@ public class DishService : IDishService
         DateTime fromDate = DateTime.Now.StartOfWeek(DayOfWeek.Monday);
         DateTime toDate = fromDate.AddDays(5);
 
-        IEnumerable<Dish> dishes = await _context.Dishes
+        IEnumerable<Dish> dishes = await _dbContext.Dishes
             .Where(d => d.ServingDate >= fromDate && d.ServingDate <= toDate)
             .ToListAsync();
 
@@ -100,11 +109,12 @@ public class DishService : IDishService
     {
         Dish newDish = _mapper.Map<Dish>(dish);
         newDish.IsActive = true;
+        newDish.PhotoUrl = UploadFile(dish.File);
         //newDish.CreatedBy = null; // TODO: Dodać uzytkownika
         newDish.CreatedDate = DateTime.Now;
 
-        await _context.Dishes.AddAsync(newDish);
-        await _context.SaveChangesAsync();
+        await _dbContext.Dishes.AddAsync(newDish);
+        await _dbContext.SaveChangesAsync();
 
         return newDish.Id;
     }
@@ -122,20 +132,20 @@ public class DishService : IDishService
         //dishToUpdate.ModifiedBy = null; // TODO: Dodać uzytkownika
         dishToUpdate.ModifiedDate = DateTime.Now;
 
-        await _context.SaveChangesAsync();
+        await _dbContext.SaveChangesAsync();
     }
 
     public async Task DeleteAsync(int id)
     {
         Dish dishToDelete = await GetDishById(id);
 
-        _context.Dishes.Remove(dishToDelete);
-        await _context.SaveChangesAsync();
+        _dbContext.Dishes.Remove(dishToDelete);
+        await _dbContext.SaveChangesAsync();
     }
 
     private async Task<Dish> GetDishById(int id)
     {
-        Dish dish = await _context.Dishes
+        Dish dish = await _dbContext.Dishes
             .FirstOrDefaultAsync(d => d.Id == id);
 
         if (dish is null) throw new NotFoundException($"Dish (id = {id}) not found");
@@ -145,12 +155,29 @@ public class DishService : IDishService
 
     private async Task<DishType> GetDishTypeById(int id)
     {
-        DishType dishType = await _context.DishTypes
+        DishType dishType = await _dbContext.DishTypes
             .FirstOrDefaultAsync(d => d.Id == id);
 
         if (dishType is null) throw new NotFoundException($"Dish type (id = {id}) not found");
 
         return dishType;
+    }
+
+    private string UploadFile(IFormFile file)
+    {
+        if (file is null || file.Length <= 0) throw new BadRequestException("Zły plik");
+
+        string currentDirectory = Directory.GetCurrentDirectory();
+        string fileName = $"{Guid.NewGuid().ToString()}.{file.FileName.Substring(file.FileName.Length - 3)}";
+        string filePath = DIRECTORY + fileName;
+        string fullPath = currentDirectory + filePath;
+
+        using (var stream = new FileStream(fullPath, FileMode.Create))
+        {
+            file.CopyTo(stream);
+        }
+
+        return filePath;
     }
 }
 
