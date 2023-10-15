@@ -1,5 +1,5 @@
-﻿using System;
-using FoodFolio.WebApi.Dtos;
+﻿using FoodFolio.WebApi.Dtos;
+using FoodFolio.WebApi.Helpers;
 using FoodFolio.WebApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,35 +19,36 @@ public class DishController : ControllerBase
 	[HttpGet]
 	public async Task<ActionResult<DishDto>> GetAll()
 	{
-        IEnumerable<DishDto> result = await _dishService.GetAllAsync();
+        IEnumerable<DishDto> result = await _dishService.GetAllAsync(RequestHelper.GetHostName(Request));
 		return Ok(result);
 	}
 
     [HttpGet("paged")]
     public async Task<ActionResult<PagedResultDto<DishDto>>> GetAll([FromBody] QueryDto query)
     {
-        PagedResultDto<DishDto> result = await _dishService.GetAllAsync(query);
+        PagedResultDto<DishDto> result = await _dishService.GetAllAsync(RequestHelper.GetHostName(Request), query);
         return Ok(result);
     }
 
     [HttpGet("byid/{id:int}")]
     public async Task<ActionResult<DishDto>> GetByIdAll(int id)
     {
-        DishDto result = await _dishService.GetByIdAsync(id, Request);
+        //string host = $"{Request.Scheme}://{Request.Host}";
+        DishDto result = await _dishService.GetByIdAsync(id, RequestHelper.GetHostName(Request));
         return Ok(result);
     }
 
     [HttpGet("currentday")]
     public async Task<ActionResult<DishDto>> GetCurrentDay()
     {
-        IEnumerable<DishDto> result = await _dishService.GetCurrentDayAsync();
+        IEnumerable<DishDto> result = await _dishService.GetCurrentDayAsync(RequestHelper.GetHostName(Request));
         return Ok(result);
     }
 
     [HttpGet("currentweek")]
     public async Task<ActionResult<DishDto>> GetCurrentWeek()
     {
-        IEnumerable<DishDto> result = await _dishService.GetCurrentWeekAsync();
+        IEnumerable<DishDto> result = await _dishService.GetCurrentWeekAsync(RequestHelper.GetHostName(Request));
         return Ok(result);
     }
 

@@ -21,7 +21,7 @@ public class DishConfiguration : IEntityTypeConfiguration<Dish>
         builder.Property(p => p.Price)
             .IsRequired();
 
-        builder.Property(p => p.PhotoUrl)
+        builder.Property(p => p.PhotoFile)
             .HasMaxLength(200);
 
         builder.Property(p => p.IsActive)

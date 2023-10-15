@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets/c681f9f6-ea20-4d8d-9e31-e1d686d38216.jpg"
     },
     {
+      "Id": "/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/wwwroot/pictures/7c9bea26-6f63-40a9-90c5-1bde3798f1e9.jpg",
+      "PackagePath": "staticwebassets/pictures/7c9bea26-6f63-40a9-90c5-1bde3798f1e9.jpg"
+    },
+    {
       "Id": "obj/Debug/net7.0/staticwebassets/msbuild.FoodFolio.WebApi.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

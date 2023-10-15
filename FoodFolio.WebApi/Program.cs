@@ -18,6 +18,8 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
+app.UseStaticFiles(); // Static files
+
 app.Seed();
 
 // Configure the HTTP request pipeline.
@@ -26,8 +28,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseStaticFiles(); // Static files
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
 

@@ -6,12 +6,12 @@ namespace FoodFolio.WebApi.Services
     {
         Task<int> CreateAsync(CreateDishDto dish);
         Task DeleteAsync(int id);
-        Task<IEnumerable<DishDto>> GetAllAsync();
-        Task<PagedResultDto<DishDto>> GetAllAsync(QueryDto query);
+        Task<IEnumerable<DishDto>> GetAllAsync(string host);
+        Task<PagedResultDto<DishDto>> GetAllAsync(string host, QueryDto query);
         //Task<DishDto> GetByIdAsync(int id);
-        Task<DishDto> GetByIdAsync(int id, HttpRequest request);
-        Task<IEnumerable<DishDto>> GetCurrentDayAsync();
-        Task<IEnumerable<DishDto>> GetCurrentWeekAsync();
+        Task<DishDto> GetByIdAsync(int id, string host);
+        Task<IEnumerable<DishDto>> GetCurrentDayAsync(string host);
+        Task<IEnumerable<DishDto>> GetCurrentWeekAsync(string host);
         Task UpdateAsync(int id, UpdateDishDto dish);
     }
 }
