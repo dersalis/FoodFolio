@@ -1,5 +1,6 @@
 /Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/bin/Debug/net7.0/appsettings.Development.json
 /Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/bin/Debug/net7.0/appsettings.json
+/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/bin/Debug/net7.0/FoodFolio.WebApi.staticwebassets.runtime.json
 /Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/bin/Debug/net7.0/FoodFolio.WebApi
 /Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/bin/Debug/net7.0/FoodFolio.WebApi.deps.json
 /Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/bin/Debug/net7.0/FoodFolio.WebApi.runtimeconfig.json
@@ -84,4 +85,3 @@
 /Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/obj/Debug/net7.0/FoodFolio.WebApi.pdb
 /Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/obj/Debug/net7.0/FoodFolio.WebApi.genruntimeconfig.cache
 /Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/obj/Debug/net7.0/ref/FoodFolio.WebApi.dll
-/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/bin/Debug/net7.0/FoodFolio.WebApi.staticwebassets.runtime.json

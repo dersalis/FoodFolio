@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<IDishService, DishService>();
+builder.Services.AddScoped<IDishTypeService, DishTypeService>();
 builder.Services.AddDbContext<FoodFolioDbContext>();
 builder.Services.AddScoped<ErrorHandlingMiddleware>();
 

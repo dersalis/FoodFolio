@@ -13,7 +13,6 @@ public class DishService : IDishService
     private readonly FoodFolioDbContext _dbContext;
     private readonly IMapper _mapper;
 
-    //private const string DIRECTORY = "/wwwroot/pictures/";
 
     public DishService(
         FoodFolioDbContext dbContext,
@@ -34,7 +33,8 @@ public class DishService : IDishService
             Name = d.Name,
             Description = d.Description,
             Price = d.Price,
-            PhotoFile = FileHelper.GetFilePath(host, d.PhotoFile),
+            PhotoFileUrl = FileHelper.GetFilePath(host, d.PhotoFileName),
+            PhotoFileBase64 = FileHelper.GetBase64(d.PhotoFileName),
             ServingDate = d.ServingDate,
             DishTypeId = d.DishTypeId,
             CreatedById = d.CreatedById,
@@ -81,7 +81,8 @@ public class DishService : IDishService
             Name = d.Name,
             Description = d.Description,
             Price = d.Price,
-            PhotoFile = FileHelper.GetFilePath(host, d.PhotoFile),
+            PhotoFileUrl = FileHelper.GetFilePath(host, d.PhotoFileName),
+            PhotoFileBase64 = FileHelper.GetBase64(d.PhotoFileName),
             ServingDate = d.ServingDate,
             DishTypeId = d.DishTypeId,
             CreatedById = d.CreatedById,
@@ -97,9 +98,27 @@ public class DishService : IDishService
     public async Task<DishDto> GetByIdAsync(int id, string host)
     {
         Dish dish = await DishHelper.GetDishById(_dbContext, id);
-        dish.PhotoFile = FileHelper.GetFilePath(host, dish.PhotoFile);
+        //dish.PhotoFileName = FileHelper.GetFilePath(host, dish.PhotoFileName);
 
-        return _mapper.Map<DishDto>(dish);
+        //return _mapper.Map<DishDto>(dish);
+
+        DishDto dishDto = new DishDto
+        {
+            Id = dish.Id,
+            Name = dish.Name,
+            Description = dish.Description,
+            Price = dish.Price,
+            PhotoFileUrl = FileHelper.GetFilePath(host, dish.PhotoFileName),
+            PhotoFileBase64 = FileHelper.GetBase64(dish.PhotoFileName),
+            ServingDate = dish.ServingDate,
+            DishTypeId = dish.DishTypeId,
+            CreatedById = dish.CreatedById,
+            CreatedDate = dish.CreatedDate,
+            ModifiedById = dish.ModifiedById,
+            ModifiedDate = dish.ModifiedDate,
+        };
+
+        return dishDto;
     }
 
     public async Task<IEnumerable<DishDto>> GetCurrentDayAsync(string host)
@@ -119,7 +138,8 @@ public class DishService : IDishService
             Name = d.Name,
             Description = d.Description,
             Price = d.Price,
-            PhotoFile = FileHelper.GetFilePath(host, d.PhotoFile),
+            PhotoFileUrl = FileHelper.GetFilePath(host, d.PhotoFileName),
+            PhotoFileBase64 = FileHelper.GetBase64(d.PhotoFileName),
             ServingDate = d.ServingDate,
             DishTypeId = d.DishTypeId,
             CreatedById = d.CreatedById,
@@ -146,7 +166,8 @@ public class DishService : IDishService
             Name = d.Name,
             Description = d.Description,
             Price = d.Price,
-            PhotoFile = FileHelper.GetFilePath(host, d.PhotoFile),
+            PhotoFileUrl = FileHelper.GetFilePath(host, d.PhotoFileName),
+            PhotoFileBase64 = FileHelper.GetBase64(d.PhotoFileName),
             ServingDate = d.ServingDate,
             DishTypeId = d.DishTypeId,
             CreatedById = d.CreatedById,
@@ -160,7 +181,7 @@ public class DishService : IDishService
     {
         Dish newDish = _mapper.Map<Dish>(dish);
         newDish.IsActive = true;
-        newDish.PhotoFile = FileHelper.UploadFile(dish.File);
+        newDish.PhotoFileName = FileHelper.UploadFile(dish.File);
         //newDish.CreatedBy = null; // TODO: Dodać uzytkownika
         newDish.CreatedDate = DateTime.Now;
 
@@ -180,7 +201,7 @@ public class DishService : IDishService
         dishToUpdate.Price = dish.Price;
         if (dish.File is not null)
         {
-            dishToUpdate.PhotoFile = FileHelper.UploadFile(dish.File);
+            dishToUpdate.PhotoFileName = FileHelper.UploadFile(dish.File);
         }
         dishToUpdate.DishType = dishType;
         //dishToUpdate.ModifiedBy = null; // TODO: Dodać uzytkownika

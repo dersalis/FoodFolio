@@ -4,6 +4,8 @@ namespace FoodFolio.WebApi.Helpers;
 
 public class FileHelper
 {
+    private const string DIRECTORY = "/wwwroot/pictures/";
+
     public static string GetFilePath(string host, string fileName)
     {
         return $"{host}/pictures/{fileName}";
@@ -11,7 +13,7 @@ public class FileHelper
 
     public static string UploadFile(IFormFile file)
     {
-        const string DIRECTORY = "/wwwroot/pictures/";
+        
 
         if (file is null || file.Length <= 0) throw new BadRequestException("Zły plik");
 
@@ -26,6 +28,14 @@ public class FileHelper
         }
 
         return fileName;
+    }
+
+    public static string GetBase64(string fileName)
+    {
+        string fullPath = Directory.GetCurrentDirectory() + DIRECTORY + fileName;
+        byte[] bytes = File.ReadAllBytes(fullPath);
+
+        return "data:image/png;base64," + Convert.ToBase64String(bytes);
     }
 }
 
