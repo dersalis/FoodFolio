@@ -45,6 +45,7 @@
     <None Remove="Extensions\" />
     <None Remove="Enums\" />
     <None Remove="Helpers\" />
+    <None Remove="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -65,6 +66,7 @@
     <Folder Include="wwwroot\" />
     <Folder Include="wwwroot\pictures\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

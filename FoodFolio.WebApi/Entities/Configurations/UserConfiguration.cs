@@ -22,11 +22,11 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(p => p.PasswordHash)
             .IsRequired()
-            .HasMaxLength(50);
+            .HasMaxLength(300);
 
         builder.Property(p => p.LastPasswordHash)
             .IsRequired()
-            .HasMaxLength(50);
+            .HasMaxLength(300);
 
         builder.Property(p => p.LastPasswordHash)
             .IsRequired()
