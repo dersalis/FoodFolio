@@ -1,5 +1,6 @@
 ﻿using FoodFolio.WebApi.Dtos;
 using FoodFolio.WebApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FoodFolio.WebApi.Controllers;
@@ -23,6 +24,7 @@ public class DishTypeController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize]
     public async Task<ActionResult> Create([FromForm] CreateDishTypeDto dishType)
     {
         int dishTypeId = await _dishTypeService.CreateAsync(dishType);
