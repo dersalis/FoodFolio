@@ -1,5 +1,4 @@
-﻿using System;
-using FoodFolio.WebApi.Dtos;
+﻿using FoodFolio.WebApi.Dtos;
 using FoodFolio.WebApi.Services;
 using Microsoft.AspNetCore.Mvc;
 

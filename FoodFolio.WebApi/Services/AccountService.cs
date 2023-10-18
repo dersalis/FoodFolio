@@ -90,24 +90,5 @@ public class AccountService : IAccountService
 
         return tokenHandler.WriteToken(token);
     }
-
-
-    //private async Task<Role> GetRoleByNameAsync(string roleName)
-    //{
-    //    Role role = await _dbContext.Roles
-    //        .FirstOrDefaultAsync(d => d.Name == roleName);
-
-    //    if (role is null) throw new NotFoundException($"Role (name = {roleName}) not found");
-
-    //    return role;
-    //}
-
-    //private async Task CheckUserExistAsync(string email)
-    //{
-    //    User user = await _dbContext.Users
-    //        .FirstOrDefaultAsync(d => d.Email == email);
-
-    //    if (user is not null) throw new NotFoundException($"User (email = {email}) exist");
-    //}
 }
 

@@ -11,15 +11,18 @@ namespace FoodFolio.WebApi.Services;
 public class DishService : IDishService
 {
     private readonly FoodFolioDbContext _dbContext;
+    private readonly IUserContextService _userContextService;
     private readonly IMapper _mapper;
 
 
     public DishService(
         FoodFolioDbContext dbContext,
+        IUserContextService userContextService,
         IMapper mapper
         )
     {
         _dbContext = dbContext;
+        _userContextService = userContextService;
         _mapper = mapper;
     }
 
@@ -179,10 +182,12 @@ public class DishService : IDishService
 
     public async Task<int> CreateAsync(CreateDishDto dish)
     {
+        User createdBy = await UserHelper.GetUserById(_dbContext, _userContextService.GetUserId());
+
         Dish newDish = _mapper.Map<Dish>(dish);
         newDish.IsActive = true;
         newDish.PhotoFileName = FileHelper.UploadFile(dish.File);
-        //newDish.CreatedBy = null; // TODO: Dodać uzytkownika
+        newDish.CreatedBy = createdBy;
         newDish.CreatedDate = DateTime.Now;
 
         await _dbContext.Dishes.AddAsync(newDish);
@@ -193,6 +198,8 @@ public class DishService : IDishService
 
     public async Task UpdateAsync(int id, UpdateDishDto dish)
     {
+        User modifiedBy = await UserHelper.GetUserById(_dbContext, _userContextService.GetUserId());
+
         Dish dishToUpdate = await DishHelper.GetDishById(_dbContext, id);
         DishType dishType = await DishTypeHelper.GetDishTypeById(_dbContext, dish.DishTypeId);
 
@@ -204,7 +211,7 @@ public class DishService : IDishService
             dishToUpdate.PhotoFileName = FileHelper.UploadFile(dish.File);
         }
         dishToUpdate.DishType = dishType;
-        //dishToUpdate.ModifiedBy = null; // TODO: Dodać uzytkownika
+        dishToUpdate.ModifiedBy = modifiedBy;
         dishToUpdate.ModifiedDate = DateTime.Now;
 
         await _dbContext.SaveChangesAsync();

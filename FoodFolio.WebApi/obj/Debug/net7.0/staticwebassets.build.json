@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+MwVIPKn7AXhrcUH1Oj5KpgBkQgfMRJnxGtSvuuXoIQ=",
+  "Hash": "puk5UPe6rrqo72AnN5rtIivQrO4QdMSBQ+qhN+Fjn1U=",
   "Source": "FoodFolio.WebApi",
   "BasePath": "_content/FoodFolio.WebApi",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/c681f9f6-ea20-4d8d-9e31-e1d686d38216.jpg"
+    },
+    {
+      "Identity": "/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/wwwroot/pictures/1e3927c1-a469-4693-b04b-ac93490b769a.png",
+      "SourceId": "FoodFolio.WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/wwwroot/",
+      "BasePath": "_content/FoodFolio.WebApi",
+      "RelativePath": "pictures/1e3927c1-a469-4693-b04b-ac93490b769a.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/pictures/1e3927c1-a469-4693-b04b-ac93490b769a.png"
     },
     {
       "Identity": "/Users/damianruta/Workspace/Projects/FoodFolio/FoodFolio.WebApi/wwwroot/pictures/3a35f7e8-6b95-4148-8c2c-e25f105c3f3d.png",
