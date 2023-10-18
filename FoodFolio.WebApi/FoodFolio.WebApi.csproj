@@ -47,6 +47,7 @@
     <None Remove="Helpers\" />
     <None Remove="Models\" />
     <None Remove="Configurations\" />
+    <None Remove="Validators\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -69,6 +70,7 @@
     <Folder Include="Helpers\" />
     <Folder Include="Models\" />
     <Folder Include="Configurations\" />
+    <Folder Include="Validators\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

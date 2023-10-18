@@ -1,4 +1,5 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
+using Microsoft.OpenApi.Models;
 
 namespace FoodFolio.WebApi.Configurations;
 
@@ -11,7 +12,7 @@ public static class SwaggerConfiguration
             options.SwaggerDoc("V1", new OpenApiInfo
             {
                 Version = "V1",
-                Title = "Restauranteo API",
+                Title = "FoodFolio API",
                 Description = " WebAPI ;)",
                 Contact = new OpenApiContact
                 {
@@ -45,6 +46,8 @@ public static class SwaggerConfiguration
                 }
             });
         });
+
+        builder.Services.AddFluentValidationRulesToSwagger();
     }
 }
 

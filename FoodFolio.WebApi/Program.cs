@@ -4,26 +4,16 @@ using FoodFolio.WebApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddAuthenticationServices();
-
-// Add services to the container.
-builder.AddServices();
-
-builder.AddMiddlewareServices();
-
-builder.AddDbContextServices();
-
-builder.Services.AddHttpContextAccessor();
-
-builder.Services.AddControllers();
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-
+builder.Services.AddControllers();
+builder.AddAuthenticationServices();
+builder.AddFluentValidatorService();
+builder.AddServices();
+builder.AddMiddlewareServices();
+builder.AddDbContextServices();
+builder.Services.AddHttpContextAccessor();
 builder.AddAutoMapperServices();
-
 builder.AddSwaggerService();
-
 builder.AddCorsServices();
 
 
